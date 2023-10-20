@@ -1,7 +1,7 @@
 import { createHash } from "crypto";
 
 function criaHash(senha) {
-  return createHash("sha256").update(senha).digest("hex");
+  return createHash("sha512").update(senha).digest("hex");
 }
 
 class Usuario {
@@ -20,6 +20,8 @@ class Usuario {
 }
 
 const novoUsuario = new Usuario("matheus", "balalaico");
+
+console.log(novoUsuario);
 
 console.log(novoUsuario.autentica("matheus", "borboleto"));
 
